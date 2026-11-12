@@ -96,7 +96,6 @@ Describe methodology here. How the workflows were downloaded from the different 
 
 Responsible: Alma, Xenia, Julian
 
-### nf-core
 The nf-core community provides a collection of curated Nextflow workflows covering a wide range of bioinformatics applications. Nextflow represents workflows as collections of processes connected through channels that transfer data between them. Each process encapsulates a computational step, while workflow definitions specify how processes are invoked and connected.
 
 The nf-core catalogue contained 160 workflows at the time of download (9 November 2026). For each workflow, we accessed its corresponding GitHub repository and downloaded the source files required for analysis. Fourteen workflows were archived and no longer actively maintained; these were retained to capture historical patterns of software integration. Two workflows were excluded because their repositories did not contain files compatible with our extraction method, resulting in a final dataset of 158 workflows.
