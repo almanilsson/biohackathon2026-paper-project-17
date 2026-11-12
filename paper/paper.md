@@ -143,7 +143,6 @@ Describe results here. How many workflows were retrieved, how many components we
 Comparison/agreement between co-citations and workflow order (FIGURES)
 
 Responsible: Alma, Xenia, Julian, Vedran
-### nf-core
 The nf-core catalogue contained 160 workflows, of which 158 were included in the analysis. The final dataset comprised 146 DSL2 workflows and 12 DSL1 workflows. 634 tools were assigned a bio.tools identifier. A total of 541 tools were identified using information available directly from the workflow repositories, while an additional 93 were identified through matching against the local bio.tools registry. The resulting software interaction network comprised 434 unique nodes and 4,738 directed edges, representing 6,661 observed tool pairs.
 
 ## Goal 3: Integrating directed tool relationships and visualize them in InSoLiTo.
