@@ -9,34 +9,59 @@ authors:
     orcid: 0009-0004-8501-642X
     affiliation: 1
     role: Methodology, Formal analysis, Visualization, Software, Writing – original draft
+  - name: Xenie Bobryšava
+    orcid: 0009-0001-1389-5937
+    affiliation: 2
   - name: Yojana Gadiya
     orcid: 0000-0002-7683-0452
-    affiliation: 2
-    role: Methodology, Formal analysis, Visualization, Software, Writing – original draft
-  - name: Magnus Palmblad
-    orcid: 0000-0002-5865-8994
     affiliation: 3
     role: Methodology, Formal analysis, Visualization, Software, Writing – original draft
+  - name: Julian Uszkoreit
+    orcid: 0000-0001-7522-4007
+    affiliation: 4
+    role: Methodology, Formal analysis, Visualization, Software, Writing – original draft
+  - name: Juan Crisantos Perez Carrasco
+    orcid: 0009-0007-3377-6787
+    affiliation: 5
+    role: Methodology, Formal analysis, Visualization, Software, Writing – original draft
+  - name: Vedran Kasalica
+    orcid: 0000-0002-0097-1056
+    affiliation: 6
+  - name: Magnus Palmblad
+    orcid: 0000-0002-5865-8994
+    affiliation: 7
+    role: Methodology, Formal analysis, Visualization, Software, Writing – original draft
 affiliations:
-  - name: Uppsala
+  - name: Uppsala University, Sweden
     index: 1
-    ror: ROR
-  - name: Name
+    ror: 048a87296
+  - name: Masaryk University, Czechia
     index: 2
-    ror: ROR
-  - name: Leiden University Medical Center, Albinusdreef 2, 2333 ZA, Leiden, The Netherlands
+    ror: 02j46qs45
+  - name: Enveda Therapeutics, Germany
     index: 3
+    ror:
+  - name: Ruhr University Bochum, Medical Faculty, Medical Bioinformatics, BochumD-44801, Germany
+    index: 4
+    ror: 04tsk2644
+  - name: Barcelona Supercomputing Center, Plaça Eusebi Güell, 1-3, 08034 Barcelona, Spain
+    index: 5
+    ror: 05sd8tv96
+  - name: Health-RI, Jaarbeursplein 6, 3521 AL, Utrecht, The Netherlands
+    index: 6
+    ror: 02xcmp898           
+  - name: Leiden University Medical Center, Albinusdreef 2, 2333 ZA, Leiden, The Netherlands
+    index: 7
     ror: 05xvt9f17
-    
-date: 8 November 2023
+date: 12 November 2026
 cito-bibliography: paper.bib
-event: BH23EU
-biohackathon_name: "BioHackathon Europe 2023"
+event: BH26EU
+biohackathon_name: "BioHackathon Europe 2026"
 biohackathon_url:   "https://biohackathon-europe.org/"
-biohackathon_location: "Barcelona, Spain, 2023"
-group: Project 26
+biohackathon_location: "Barcelona, Spain, 2026"
+group: Project 17
 # URL to project git repo --- should contain the actual paper.md:
-git_url: https://github.com/biohackrxiv/publication-template
+git_url: https://github.com/inab/biohackathon2026-paper-project-17
 # This is the short authors description that is used at the
 # bottom of the generated paper (typically the first two authors):
 authors_short: First Author \emph{et al.}
@@ -45,117 +70,66 @@ authors_short: First Author \emph{et al.}
 
 # Introduction
 
-As part of the BioHackathon Europe 2023, we here report...
+Research software tools, combined in computational workflows, are essential to modern, data-driven, life science. While resources such as InSoLito [REF] provides a network of co-citations of papers associated with software tools, Galaxy [REF] provides a tool recommender based on existing workflows, and Workflowmics [REF] explores new workflows based on annotations in bio.tools [REF], no effort have been so far been made to capture the order of tool citations and compare this with actual, directed, interoperability of tools in workflows. In this project, we bridged ordered citations from the Open Access literature in Europe PMC [REF] with Galaxy, Nextflow [REF] and Snakemake [REF] workflows, using research software annotated and associated with publications in bio.tools to predict tool interoperability from co-citations and visualize relationships between bioinformatics tools used in workflows, focusing on three main goals:
 
-## Meeting information
+Goal 1:  Building directed graph of co-citations of papers associated with software tools in bio.tools. By analyzing the order in which publications associated with bio.tools entries are cited in open-access scientific articles, we infer potential relationships between tools. Unlike conventional undirected co-citation networks, the resulting graph captures citation order and distances, providing information about the sequence in which tools are likely used in computational analyses.
 
-If you want to submit a preprint to BioHackrXiv, first check if your meeting is registered. You can find a list
-of meetings [here](https://index.biohackrxiv.org/meetings). If your meeting is missing, please contact your meeting
-organizers. The above list also provides information on the YAML fields with information about the meeting.
+Goal 2: Comparing literature-derived relationships with computational workflows with the latter as ground-truth for the validation of the former. We explore tool dependencies and execution order from workflows deposited in WorkflowHub, including Galaxy and Nextflow workflows, as well as Nextflow workflows in nf-core, and Snakemake workflows from XXX (Julian), and compare these with relationships inferred from the literature. Specifically, we want to know how many co-citations, and with what distance between the citations in the publications, are needed to predict actual execution order in workflows.
 
-The following fields need to be given:
+Goal 3: Integrating directed tool relationships and visualize them in InSoLiTo. This requires a number of decisions on how to present directionality as well as source of the information shown, e.g. undirected co-citations from all literature, directed co-citations from Open Access subset of the literature, or actual workflows. This will enable users to explore not only which tools are frequently cited together, but also potential directional interoperability between them, providing a foundation for future applications such as software recommendation and automated workflow exploration [REF Workflowmics][REF Pubmetric].
 
-```YAML
-biohackathon_name: "BioHackathon Europe 2023"
-biohackathon_url:   "https://biohackathon-europe.org/"
-biohackathon_location: "Barcelona, Spain, 2023"
-group: Project 26
-git_url: https://github.com/yourOrganization/your_report_repo
-```
 
-The [BioHackrXiv meeting pages](https://index.biohackrxiv.org/meetings) provide content to use for the first
-three fields. The `git_url:` field must have the link to the GitHub repository with your preprint (draft).
+# Methods
 
-## Author information
+## Goal 1:  Building directed graph of co-citations of papers associated with software tools in bio.tools
 
-Information about the authors is given in the [YAML](https://en.wikipedia.org/wiki/YAML) format at the top of this template.
-For authors you provide their names, their affiliations. That is the minimum, but as BioHackrXiv is moving to a situation
-where more metadata is shared, and used by, for example, EuropePMC, adding additional information ie encouraged.
+Describe methodology here. How the literature was retrieved. Full set only (if we don't show the metabolomics and proteomics specifically). Link to Yojanas/Julians script in GitHub repo.
 
-BioHackathons is about hacking together, and the minimal number of authors for reports is two. This makes a minimal example
-look like this:
+Network construction in Cytoscape?
 
-```yaml
-authors:
-  - name: First Author
-    affiliation: 1
-  - name: Last Author
-    affiliation: 2
-affiliations:
-  - name: First Affiliation
-    index: 1
-  - name: ELIXIR Europe
-    index: 2
-```
+Responsible: Yojana, Julian, Magnus?
 
-### Author identifiers
 
-Ideally, authors provide their [ORCID](https://orcid.org/) identifier. For affiliations, It is added with the `orcid:` field.
-So, and author record would look like this:
+## Goal 2: Comparing literature-derived relationships with computational workflows 
 
-```yaml
-authors:
-  - name: First Author
-    affiliation: 1
-    orcid: 0000-0000-0000-0000
-```
+Describe methodology here. How the workflows were downloaded from the different sources, and tool edges edges constructed.
 
-### Research Organization Registry identifiers
+Responsible: Alma, Xenia, Julian
 
-Matching the author identifier, the affiliations can be further specified with the
-[Research Organization Registry](https://ror.org/) (ROR) identifier.
-For example, this is the affiliation identifier can be added with the `ror:` field:
 
-```yaml
-affiliations:
-  - name: ELIXIR Europe
-    ror: 044rwnt51
-    index: 2
-```
+## Goal 3: Integrating directed tool relationships and visualize them in InSoLiTo.
 
-### Contributor Role Taxonomy
+Responsible: Juancris
 
-A last feature since is minimal support for the Contributor Role Taxonomy (CRediT). You
-can specify the role of authors in writing the report with the `role:` field. However,
-the authors are responsible for selection the right terms from [CRediT](https://credit.niso.org/).
-An example looks like this:
 
-```yaml
-authors:
-  - name: First Author
-    affiliation: 1
-    orcid: 0000-0000-0000-0000
-    role: Conceptualization, Writing – review & editing
-```
 
-### A full examples
 
-A full example then has this structure:
+# Results
 
-```yaml
-authors:
-  - name: First Author
-    affiliation: 1
-    role: Writing – original draft
-  - name: Last Author
-    orcid: 0000-0000-0000-0000
-    affiliation: 2
-    role: Conceptualization, Writing – review & editing
-affiliations:
-  - name: First Affiliation
-    index: 1
-  - name: ELIXIR Europe
-    ror: 044rwnt51
-    index: 2
-```
+## Goal 1:  Building directed graph of co-citations of papers associated with software tools in bio.tools
 
-# Formatting
+Describe results here. Numbers of papers, citations and co-citations of papers in bio.tools, how long it took to download etc. How many nodes and edges in final network? Figure of network in Cytoscape (FIGURE)
 
-This document use Markdown and you can look at [this tutorial](https://www.markdowntutorial.com/).
+Responsible: Yojana, Julian, Magnus?
 
-## Subsection level 2
+## Goal 2: Comparing literature-derived relationships with computational workflows 
 
-Please keep sections to a maximum of only two levels.
+Describe results here. How many workflows were retrieved, how many components were matched to bio.tools entries, etc.
+
+Comparison/agreement between co-citations and workflow order (FIGURES)
+
+Responsible: Alma, Xenia, Julian, Vedran
+
+
+## Goal 3: Integrating directed tool relationships and visualize them in InSoLiTo.
+
+How the directed co-citation and workflow interoperability edges were incorporated and visualized in InSoLiTo. By default, we chose to display one edge, with source and target arrowheads, rather than two separate edges, for each source (co-citation, directed co-citation and workflows). Edge widths correspond to the number of co-citation or combination in workflows and relative arrowhead sizes the directedness of the edge.
+
+Responsible: Juancris
+
+
+
+Here are some general instructions for this Markdown:
 
 ## Tables
 
