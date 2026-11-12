@@ -99,15 +99,9 @@ Describe methodology here. How the workflows were downloaded from the different 
 
 Responsible: Alma, Xenia, Julian
 
-Galaxy workflow RO-Crates were downloaded from WorkflowHubs API, and their .ga files were extracted. In each workflow, a directed edge (A→B) was recorded whenever tool A's output fed to tool B. Inputs and helper steps were skipped, and the tools on either side of them were connected. Each pair was counted once per workflow. Pairs crossing subworkflow boundaries (a node in a workflow representing another workflow) were not captured. The edge extractions were checked by hand against the corresponding WorkflowHub diagrams (n = 5 workflows).
-Next, ToolShed tool names were mapped to bio.tools IDs in using three different methods, each assigned a degree of confidence. 
-The source given the highest confidence mapping (confidence == 1) was Galaxy Communities Dock (aka Galaxy Codex) - a community based registry mapping of among other things ToolShed names to bio.tools IDs. The second method was attempting an exact name match against bio.tools IDs (confidence == 2). The lowest level of confidence (confidence == 3) was given to tools identified by cutting away anything (excluding a blocklist of words we saw did not ) after the first "_"  as there are a lot of suffixes added on in this manner (e.g. samtools_view → samtools). 
-Pairs with an unmapped tool, or which after name mapping were connected to themselves, were dropped. Each edge was given the weaker mapping method of its two tools. 
+Galaxy workflow RO-Crates were downloaded through the WorkflowHub API, and their `.ga` files extracted. In each workflow, a directed edge (A → B) was recorded whenever the output of tool A was an input to tool B. Inputs and helper steps were skipped, and the tools on either side of them were connected directly. Each unique pair was counted once per workflow. Pairs crossing subworkflow boundaries (a step that is itself a workflow) were not captured. The extracted edges were checked by hand against the WorkflowHub diagrams of five workflows. ToolShed tool names were then mapped to bio.tools IDs by three methods, in order of confidence: (1) the Galaxy Codex (Galaxy Communities Dock), a community registry that links ToolShed tools to bio.tools; (2) an exact match of the tool name to a bio.tools ID; and (3) a match of the name prefix before the first underscore (e.g. samtools_view → samtools), excluding generic words such as "fasta" or "filter" and known false matches. Each edge was assigned the lower confidence of its two tools. Pairs with an unmapped tool, and pairs whose two tools mapped to the same ID, were removed.
 
-
-For all workflow sources, the edges were compared with the directed co-citation graph, indivudaly and combined. blabla TODO: comparison with citation graph to be described for all workflows at once. 
-
-
+The workflow edges of each source (Galaxy, Nextflow, nf-core) were compared with the directed co-citation graph, both separately and combined. For the combined set, the three sets were merged on tool IDs. TODO: update shared description or remove from Method if it is more relevant to Results.
 
 ## Goal 3: Integrating directed tool relationships and visualize them in InSoLiTo.
 
