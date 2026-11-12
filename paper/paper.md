@@ -53,6 +53,9 @@ affiliations:
   - name: Leiden University Medical Center, Albinusdreef 2, 2333 ZA, Leiden, The Netherlands
     index: 7
     ror: 05xvt9f17
+  - name: SciLifeLab, Sweden
+    index: 8
+    ror: 04ev03g22
 date: 12 November 2026
 cito-bibliography: paper.bib
 event: BH26EU
