@@ -1,24 +1,33 @@
 ---
-title: 'BioHackEU23 report: Template for the very long title'
-title_short: 'BioHackEU23 #26: unknown chemical substances'
+title: 'Bridging Literature and Practice: Tool Co-citation Networks from Publications and Registered Workflows'
+title_short: 'BioHackEU26 #16: Bridging Literature and Practise'
 tags:
-  - cheminformatics
-  - PubChem
-  - unknown chemical substances
+  - bibliometrics
+  - bio.tools
 authors:
-  - name: First Author
+  - name: Alma Nilsson
+    orcid: 0009-0004-8501-642X
     affiliation: 1
-    role: Writing – original draft
-  - name: Last Author
-    orcid: 0000-0000-0000-0000
+    role: Methodology, Formal analysis, Visualization, Software, Writing – original draft
+  - name: Yojana Gadiya
+    orcid: 0000-0002-7683-0452
     affiliation: 2
-    role: Conceptualization, Writing – review & editing
+    role: Methodology, Formal analysis, Visualization, Software, Writing – original draft
+  - name: Magnus Palmblad
+    orcid: 0000-0002-5865-8994
+    affiliation: 3
+    role: Methodology, Formal analysis, Visualization, Software, Writing – original draft
 affiliations:
-  - name: First Affiliation
+  - name: Uppsala
     index: 1
-  - name: ELIXIR Europe
-    ror: 044rwnt51
+    ror: ROR
+  - name: Name
     index: 2
+    ror: ROR
+  - name: Leiden University Medical Center, Albinusdreef 2, 2333 ZA, Leiden, The Netherlands
+    index: 3
+    ror: 05xvt9f17
+    
 date: 8 November 2023
 cito-bibliography: paper.bib
 event: BH23EU
