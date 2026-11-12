@@ -54,7 +54,7 @@ affiliations:
     index: 7
     ror: 05xvt9f17
   - name: SciLifeLab, Sweden
-    index: 8
+    index: 1
     ror: 04ev03g22
 date: 12 November 2026
 cito-bibliography: paper.bib
