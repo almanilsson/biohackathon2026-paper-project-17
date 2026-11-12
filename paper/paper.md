@@ -133,7 +133,6 @@ Responsible: Juancris
 
 
 
-
 # Results
 
 ## Goal 1:  Building directed graph of co-citations of papers associated with software tools in bio.tools
@@ -151,6 +150,12 @@ Comparison/agreement between co-citations and workflow order (FIGURES)
 Responsible: Alma, Xenia, Julian, Vedran
 
 The nf-core catalogue contained 160 workflows, of which 158 were included in the analysis. The final dataset comprised 146 DSL2 workflows and 12 DSL1 workflows. 634 tools were assigned a bio.tools identifier. A total of 541 tools were identified using information available directly from the workflow repositories, while an additional 93 were identified through matching against the local bio.tools registry. The resulting software interaction network comprised 434 unique nodes and 4,738 directed edges, representing 6,661 observed tool pairs.
+
+Of the 1,620 workflows registered on WorkflowHub, 1,617 were downloaded. Of these, 788 were Galaxy workflows, and 779 of those contained a .ga file. Edge extraction gave at least one tool pair for 629 workflows; the remaining 150 contained none. In total, 5,091 pairs were extracted, forming 2,182 distinct edges between 1,186 ToolShed tools, with a median of 5 edges per workflow (maximum 98). Of the 1,186 ToolShed tools, 851 were mapped to a bio.tools ID (Codex 515, prefix 275, name 61), covering 77% of all tool uses. After mapping, 758 distinct edges remained between 323 bio.tools entries; 443 of these were at Codex confidence, and 535 at Codex or name confidence. Of the 413 workflows with mapped edges, 96 had exactly the same set of edges as another workflow.
+
+[placeholders-update-for-new-directededges]
+At Codex confidence, [119] of [199] workflow tools were present in the citation graph, and [155] of [421] workflow pairs were co-cited. [Most pairs that were not co-cited involved tools outside the proteomics and metabolomics literature.] Among co-cited pairs, the citation direction agreed with the workflow direction for [70] % of pairs at Codex confidence, [69] % at Codex or name confidence, and [67] % for all mapped pairs. When both sources showed a clear direction (n = [95]), agreement was [83%], and it increased with the number of articles: from [71–76] % for pairs cited in fewer than 5 articles to [96%] for pairs cited in 50 or more. [Confusion matrix: diagonal values to be added.]
+
 
 
 ## Goal 3: Integrating directed tool relationships and visualize them in InSoLiTo.
