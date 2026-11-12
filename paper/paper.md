@@ -70,7 +70,13 @@ authors_short: First Author \emph{et al.}
 
 # Introduction
 
-As part of the BioHackathon Europe 2026, we here report...
+Research software tools, combined in computational workflows, are essential to modern, data-driven, life science. While resources such as InSoLito [REF] provides a network of co-citations of papers associated with software tools, Galaxy [REF] provides a tool recommender based on existing workflows, and Workflowmics [REF] explores new workflows based on annotations in bio.tools [REF], no effort have been so far been made to capture the order of tool citations and compare this with actual, directed, interoperability of tools in workflows. In this project, we bridged ordered citations from the Open Access literature in Europe PMC [REF] with Galaxy, Nextflow [REF] and Snakemake [REF] workflows, using research software annotated and associated with publications in bio.tools to predict tool interoperability from co-citations and visualize relationships between bioinformatics tools used in workflows, focusing on three main goals:
+
+Goal 1: Constructing a directed network of software tool co-citations. By analyzing the order in which publications associated with bio.tools entries are cited in open-access scientific articles, we infer potential relationships between tools. Unlike conventional undirected co-citation networks, the resulting graph captures citation order and distances, providing information about the sequence in which tools are likely used in computational analyses.
+
+Goal 2: Comparing literature-derived relationships with computational workflows with the latter as ground-truth for the validation of the former. Specifically, we explore aim to extract tool dependencies and execution order from workflows deposited in WorkflowHub, including Galaxy and Nextflow workflows, and compare these with relationships inferred from the literature. This will allow us to investigate whether citation order can predict the direction of tool dependencies in actual workflows, and how predictive performance depends on the strength and consistency of co-citation patterns.
+
+Integrating directed tool relationships into InSoLiTo. Finally, we aim to extend InSoLiTo, an existing platform for exploring relationships between life science software tools through publication co-citations, with the newly constructed directed network. This will enable users to explore not only which tools are frequently cited together, but also potential directional relationships between them, providing a foundation for future applications such as software recommendation and workflow design.
 
 ## Meeting information
 
