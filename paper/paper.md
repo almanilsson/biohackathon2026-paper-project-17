@@ -9,34 +9,59 @@ authors:
     orcid: 0009-0004-8501-642X
     affiliation: 1
     role: Methodology, Formal analysis, Visualization, Software, Writing – original draft
+  - name: Xenie Bobryšava
+    orcid: 0009-0001-1389-5937
+    affiliation: 2
   - name: Yojana Gadiya
     orcid: 0000-0002-7683-0452
-    affiliation: 2
-    role: Methodology, Formal analysis, Visualization, Software, Writing – original draft
-  - name: Magnus Palmblad
-    orcid: 0000-0002-5865-8994
     affiliation: 3
     role: Methodology, Formal analysis, Visualization, Software, Writing – original draft
+  - name: Julian Uszkoreit
+    orcid: 0000-0001-7522-4007
+    affiliation: 4
+    role: Methodology, Formal analysis, Visualization, Software, Writing – original draft
+  - name: Juan Crisantos Perez Carrasco
+    orcid: 0009-0007-3377-6787
+    affiliation: 5
+    role: Methodology, Formal analysis, Visualization, Software, Writing – original draft
+  - name: Vedran Kasalica
+    orcid: 0000-0002-0097-1056
+    affiliation: 6
+  - name: Magnus Palmblad
+    orcid: 0000-0002-5865-8994
+    affiliation: 7
+    role: Methodology, Formal analysis, Visualization, Software, Writing – original draft
 affiliations:
-  - name: Uppsala
+  - name: Uppsala University, Sweden
     index: 1
-    ror: ROR
-  - name: Name
+    ror: 048a87296
+  - name: Masaryk University, Czechia
     index: 2
-    ror: ROR
-  - name: Leiden University Medical Center, Albinusdreef 2, 2333 ZA, Leiden, The Netherlands
+    ror: 02j46qs45
+  - name: Enveda Therapeutics, Germany
     index: 3
+    ror:
+  - name: Ruhr University Bochum, Medical Faculty, Medical Bioinformatics, BochumD-44801, Germany
+    index: 4
+    ror: 04tsk2644
+  - name: Barcelona Supercomputing Center, Plaça Eusebi Güell, 1-3, 08034 Barcelona, Spain
+    index: 5
+    ror: 05sd8tv96
+  - name: Health-RI, Jaarbeursplein 6, 3521 AL, Utrecht, The Netherlands
+    index: 6
+    ror: 02xcmp898           
+  - name: Leiden University Medical Center, Albinusdreef 2, 2333 ZA, Leiden, The Netherlands
+    index: 7
     ror: 05xvt9f17
-    
-date: 8 November 2023
+date: 12 November 2026
 cito-bibliography: paper.bib
-event: BH23EU
-biohackathon_name: "BioHackathon Europe 2023"
+event: BH26EU
+biohackathon_name: "BioHackathon Europe 2026"
 biohackathon_url:   "https://biohackathon-europe.org/"
-biohackathon_location: "Barcelona, Spain, 2023"
-group: Project 26
+biohackathon_location: "Barcelona, Spain, 2026"
+group: Project 17
 # URL to project git repo --- should contain the actual paper.md:
-git_url: https://github.com/biohackrxiv/publication-template
+git_url: https://github.com/inab/biohackathon2026-paper-project-17
 # This is the short authors description that is used at the
 # bottom of the generated paper (typically the first two authors):
 authors_short: First Author \emph{et al.}
@@ -45,7 +70,7 @@ authors_short: First Author \emph{et al.}
 
 # Introduction
 
-As part of the BioHackathon Europe 2023, we here report...
+As part of the BioHackathon Europe 2026, we here report...
 
 ## Meeting information
 
@@ -56,11 +81,11 @@ organizers. The above list also provides information on the YAML fields with inf
 The following fields need to be given:
 
 ```YAML
-biohackathon_name: "BioHackathon Europe 2023"
+biohackathon_name: "BioHackathon Europe 2026"
 biohackathon_url:   "https://biohackathon-europe.org/"
-biohackathon_location: "Barcelona, Spain, 2023"
+biohackathon_location: "Barcelona, Spain, 2026"
 group: Project 26
-git_url: https://github.com/yourOrganization/your_report_repo
+git_url: https://github.com/inab/biohackathon2026-paper-project-17
 ```
 
 The [BioHackrXiv meeting pages](https://index.biohackrxiv.org/meetings) provide content to use for the first
